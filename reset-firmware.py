@@ -291,6 +291,12 @@ if __name__ == '__main__':
     send_json('g30a', 0.000)
     send_json('g30b', 0.000)
     send_json('g30c', 0.000)
+    # Paper scrap stapled to the back...
+    send_json('2tr', 5)  # This overrides the 40.000 that _wasn'_ set to 5 earlier...
+    send_json('3ma', 2)  # This doesn't change the value...
+
+    # This is _my_ override. This just seems to make more sense, because 1tr and 2tr are both 5.
+    send_json('3tr', 5)  # This is set to 1... I'm setting it to 5
 
     # End Firmware Instructions
     # TODO: Find out, is flushing the queue the correct action to take here? That's what we're doing, anyway.
